@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
+
+
+@font-face {
+    font-family: 'baloo2';
+    src: url('../fonts/Baloo2-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'baloo2';
+    src: url('../fonts/Baloo2-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'baloo2';
+    src: url('../fonts/Baloo2-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'baloo2';
+    src: url('../fonts/Baloo2-Regular.ttf');
+    font-weight: 400;
+}
+
+.bal-700{
+    font-family: 'baloo2';
+    font-weight: 700;
+}
+
+.bal-600{
+    font-family: 'baloo2';
+    font-weight: 600;
+}
+
+.bal-500{
+    font-family: 'baloo2';
+    font-weight: 500;
+}
+
+.bal-400{
+    font-family: 'baloo2';
+    font-weight: 400;
+}
+
+
+
+:root{
+    --main-color: #18333E;
+}
+
+@layer utilities{
+    
+    .text-col{
+        color: var(--main-color);
+    }
+
+}
