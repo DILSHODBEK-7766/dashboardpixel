@@ -8,7 +8,7 @@
     <!-- CSS!!! -->
     <link rel="stylesheet" href="./src/output.css">
     <!-- FONTAWESOME!!! -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+    <script src="https://kit.fontawesome.com/00796451d6.js" crossorigin="anonymous"></script>
 
     <!-- FAVICON!!! -->
     <link rel="shortcut icon" href="./img/favicon__logo.ico" type="image/x-icon">
@@ -19,13 +19,15 @@
 
     <header>
 
-        <aside class="fixed h-full px-10 py-5 flex flex-col gap-15">
+        <i id="sideBtn" class="fa-solid fa-bars text-xl text-col fixed top-5 left-5 z-30 cursor-pointer"></i>
+
+        <aside id="sideBar" class="fixed h-full px-10 py-5 flex flex-col gap-15 border-neutral-400 top-0 left-0 -translate-x-full transition-transform duration-300 ease-in-out">
 
             <div class="flex flex-col gap-15">
 
-                <a href="#"><img src="./img/nft__logo.png" alt="Hiking__logo"></a>
+                <a href="#"><img src="./img/nft__logo.png" alt="Hiking__logo" class="mt-5"></a>
 
-                <ul class="flex flex-col gap-2">
+                <ul class="flex flex-col gap-1">
 
                     <li class="relative transition-transform hover:-translate-x-10 duration-500 ease-in-out">
 
@@ -49,7 +51,7 @@
                             
                             <div class="flex items-center justify-start w-8 h-12 rounded-r-full transition-all duration-500 ease-in-out group-hover:bg-amber-300 group-hover:w-28 group-hover:pl-20">
                                 
-                                <i class="fa-solid fa-notes text-lg"></i>
+                                <i class="fa-solid fa-note-sticky text-lg"></i>
 
                             </div> 
                             
@@ -97,7 +99,7 @@
                             
                             <div class="flex items-center justify-start w-8 h-12 rounded-r-full transition-all duration-500 ease-in-out group-hover:bg-amber-300 group-hover:w-28 group-hover:pl-20">
                                 
-                                <i class="fa-solid fa-telescope text-lg"></i>
+                                <i class="fa-solid fa-binoculars text-lg"></i>
 
                             </div> 
                             
@@ -113,8 +115,8 @@
                             
                             <div class="flex items-center justify-start w-8 h-12 rounded-r-full transition-all duration-500 ease-in-out group-hover:bg-amber-300 group-hover:w-28 group-hover:pl-20">
                                 
-                                <i class="fa-sharp-duotone fa-solid fa-circle-three-quarters text-lg"></i>
-
+                                <i class="fa-solid fa-chart-pie text-lg"></i>
+                                
                             </div> 
                             
                             Graph
@@ -129,7 +131,7 @@
                             
                             <div class="flex items-center justify-start w-8 h-12 rounded-r-full transition-all duration-500 ease-in-out group-hover:bg-amber-300 group-hover:w-28 group-hover:pl-20">
                                 
-                                <i class="fa-solid fa-message-slash"></i>
+                                <i class="fa-solid fa-message"></i>
 
                             </div> 
                             
@@ -197,22 +199,24 @@
 
                     <form class="bg-[#E9F1FA] h-12 w-[668px] rounded-4xl flex items-center gap-2 pl-5">
 
-                        <button type="submit" class="text-col text-xl pt-6"><i class="fa-solid fa-magnifying-glass-plus"></i><span class="text-transparent">.</span></button>
+                        <button type="submit" class="text-col text-xl pt-6"><i class="fa-solid fa-magnifying-glass"></i><span class="text-transparent">.</span></button>
 
                         <input type="text" placeholder="Search for places" class="bg-transparent focus:outline-none placeholder:text-[#18333E] text-col bal-400 w-full h-full">
 
 
                     </form>
 
-                    <div class="flex items-center justify-center bg-[#18333E] h-12 w-12 rounded-full    ">
+                    <div class="flex items-center justify-center bg-[#18333E] h-12 w-12 rounded-full">
 
-                        <a href class="text-xl"><i class="fa-duotone fa-solid fa-sliders-simple text-white"></i><span class="text-transparent">.</span></a>
+                        <a href class="text-xl"><i class="fa-solid fa-sliders text-white"></i><span class="text-transparent">.</span></a>
 
                     </div>
 
                 </div>
 
             </section>
+
+            <!-- TAB SECTION START!!! -->
 
             <section>
 
@@ -220,48 +224,144 @@
 
                     <h1 class="bal-600 text-col text-4xl animate-pulse">Discover World</h1>
 
-                    <div class="flex gap-14">
+                    <!-- BUTTONS START!!! -->
 
-                        <a href="#" class="text-col bal-400 animate-bounce">Recommended</a>
-                        <a href="#" class="text-col bal-400 animate-bounce">Popular Places</a>
-                        <a href="#" class="text-col bal-400 animate-bounce">Trip’s</a>
+                    <div class="flex gap-4">
+
+                        <button type="button" data-tab="tab1" class="tabBtn activeBtn text-col bal-400 bg-[rgb(232_241_250)] px-3 py-2 rounded-md">
+                            Recommended
+                        </button>
+
+                        <button type="button" data-tab="tab2" class="tabBtn text-col bal-400 bg-[rgb(232_241_250)] px-3 py-2 rounded-md">
+                            Popular Places
+                        </button>
+
+                        <button type="button" data-tab="tab3" class="tabBtn text-col bal-400 bg-[rgb(232_241_250)] px-3 py-2 rounded-md">
+                            Trip's
+                        </button>
 
                     </div>
+
+                    <!-- BUTTONS END!!! -->
+                    <!-- ======================= -->
 
                 </div>
 
-                <div class="flex items-center justify-between mt-10">
 
-                    <div>
+                <div class="relative mt-10">
 
-                        <div class="relative group">
+                    <!-- TAB1 STARTS!!! -->
 
-                            <img src="./img/sahara__desert.png" alt="sahara__desert">
+                    <div id="tab1" class="tabContent activeTab w-full flex items-center justify-between gap-5 transition duration-500 ease-in-out">
 
-                            <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 group-hover:text-[#FF7F5C] transition-all duration-500 ease-in-out"></i>
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/MOONLIGHT.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn "></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
-                        <div class="mt-4">
+                        <div>
 
-                            <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+                            <div class="relative">
 
-                            <div class="flex items-center gap-8">
+                                <img src="./img/MOONLIGHT.png" alt="sahara__desert">
 
-                                <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
 
-                                    <i class="fa-solid fa-location-check text-[#B6BDCB] animate-bounce"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">Africa</p>
-                                    
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
-                            
-                                <div class="flex items-center gap-3">
 
-                                    <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">4.9</p>
-                                    
+                        </div>
+
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/MOONLIGHT.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -269,37 +369,123 @@
                         </div>
 
                     </div>
+                    
+                    <!-- TAB1 ENDS!!! -->
+                    <!-- ===================== -->
 
-                    <div>
 
-                        <div class="relative group">
+                    <!-- TAB2 STARTS!!! -->
 
-                            <img src="./img/sahara__desert.png" alt="sahara__desert">
+                    <div id="tab2" class="tabContent passiveTab absolute top-0 left-0 flex items-center justify-between gap-6 transition duration-500 ease-in-out">
 
-                            <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 group-hover:text-[#FF7F5C] transition-all duration-500 ease-in-out"></i>
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/sahara__desert.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn "></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
-                        <div class="mt-4">
+                        <div>
 
-                            <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+                            <div class="relative">
 
-                            <div class="flex items-center gap-8">
+                                <img src="./img/sahara__desert.png" alt="sahara__desert">
 
-                                <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
 
-                                    <i class="fa-solid fa-location-check text-[#B6BDCB] animate-bounce"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">Africa</p>
-                                    
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
-                            
-                                <div class="flex items-center gap-3">
 
-                                    <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">4.9</p>
-                                    
+                        </div>
+
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/sahara__desert.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -307,37 +493,123 @@
                         </div>
 
                     </div>
+                    
+                    <!-- TAB2 ENDS!!! -->
+                    <!-- ===================== -->
 
-                    <div>
 
-                        <div class="relative group">
+                    <!-- TAB3 STARTS!!! -->
 
-                            <img src="./img/sahara__desert.png" alt="sahara__desert">
+                    <div id="tab3" class="tabContent passiveTab absolute top-0 left-0 flex items-center justify-between gap-6 transition duration-500 ease-in-out">
 
-                            <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 group-hover:text-[#FF7F5C] transition-all duration-500 ease-in-out"></i>
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/CAMPING.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn "></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
-                        <div class="mt-4">
+                        <div>
 
-                            <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+                            <div class="relative">
 
-                            <div class="flex items-center gap-8">
+                                <img src="./img/CAMPING.png" alt="sahara__desert">
 
-                                <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
 
-                                    <i class="fa-solid fa-location-check text-[#B6BDCB] animate-bounce"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">Africa</p>
-                                    
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
-                            
-                                <div class="flex items-center gap-3">
 
-                                    <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+                            </div>
 
-                                    <p class="text-col bal-500">4.9</p>
-                                    
+                        </div>
+
+                        <div>
+
+                            <div class="relative">
+
+                                <img src="./img/CAMPING.png" alt="sahara__desert">
+
+                                <i class="fa-solid fa-heart bg-white/60 p-3 rounded-full backdrop-blur-md text-col text-lg absolute top-5 left-42 transition-all duration-500 ease-in-out cursor-pointer likeBtn"></i>
+
+                            </div>
+
+                            <div class="mt-4">
+
+                                <h1 class="text-col bal-500 text-[22px]">Sahara Desert</h1>
+
+                                <div class="flex items-center gap-8">
+
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-location-dot text-[#B6BDCB] animate-bounce"></i>
+
+                                        <p class="text-col bal-500">Africa</p>
+                                        
+                                    </div>
+                                
+                                    <div class="flex items-center gap-3">
+
+                                        <i class="fa-solid fa-star text-yellow-400 animate-pulse"></i>
+
+                                        <p class="text-col bal-500">4.9</p>
+                                        
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -345,10 +617,18 @@
                         </div>
 
                     </div>
+                    
+                    <!-- TAB3 ENDS!!! -->
+                    <!-- ===================== -->
 
                 </div>
+
 
             </section>
+
+            <!-- TAB SECTION END!!! -->
+            <!-- ============================== -->
+
 
             <section>
 
@@ -360,101 +640,117 @@
 
                 </div>
 
+                <!-- DATES PAGE START!!! -->
+
                 <div class="mb-20 flex items-center justify-between">
 
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-500 ease-in-out">
 
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Mo</p>
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Mo</p>
 
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
 
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">12</h3>
-
-                    </div>
-
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
-
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Tu</p>
-
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
-
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">13</h3>
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">12</h3>
 
                     </div>
 
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
 
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">We</p>
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Tu</p>
 
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
 
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">14</h3>
-
-                    </div>
-
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
-
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Th</p>
-
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
-
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">15</h3>
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">13</h3>
 
                     </div>
 
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
 
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Fr</p>
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">We</p>
 
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
 
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">16</h3>
-
-                    </div>
-
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
-
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">St</p>
-
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
-
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">17</h3>
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">14</h3>
 
                     </div>
 
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
 
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Su</p>
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Th</p>
 
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
 
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">18</h3>
-
-                    </div>
-
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
-
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Mo</p>
-
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
-
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">19</h3>
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">15</h3>
 
                     </div>
 
-                    <div class="bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 group hover:bg-[#18333E] transition-all duration-500 ease-in-out">
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
 
-                        <p class="bal-400 text-col text-lg transition-colors duration-500 group-hover:text-white">Tu</p>
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Fr</p>
 
-                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
 
-                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500 group-hover:text-white">20</h3>
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">16</h3>
+
+                    </div>
+
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Sa</p>
+
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
+
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">17</h3>
+
+                    </div>
+
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Su</p>
+
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
+
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">18</h3>
+
+                    </div>
+
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Mo</p>
+
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-300 ease-out"></div>
+
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">18</h3>
+
+                    </div>
+
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">Tu</p>
+
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-300 ease-out"></div>
+
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">19</h3>
+
+                    </div>
+
+                    <div class="dateTime cursor-pointer bg-white w-[64px] h-[120px] rounded-4xl flex flex-col items-center justify-center gap-2 transition-all duration-300 ease-in-out">
+
+                        <p class="bal-400 text-col text-lg transition-colors duration-500">We</p>
+
+                        <div class="w-[6px] h-[10px] bg-yellow-400 rounded-2xl opacity-0 transition-all duration-500 ease-out"></div>
+
+                        <h3 class="bal-500 text-col text-3xl transition-colors duration-500">20</h3>
 
                     </div>
 
                 </div>
 
+                <!-- DATES PAGE END!!! -->
+                <!-- ============================ -->
+
             </section>
+
 
             <section>
 
@@ -518,7 +814,7 @@
 
                 <div class="flex items-center gap-5">
 
-                    <i class="fa-solid fa-location-dot text-neutral-400 text-xl animate-bounce"></i>
+                    <i class="fa-solid fa-location-dot text-neutral-400 text-xl"></i>
 
                     <a href="#" class="text-col bal-500">New York/ Dc</a>
 
@@ -540,26 +836,50 @@
 
             </div>
 
-            <div class="pt-10 relative group">
+            <!-- TAB NATURE SECTIONS START!!! -->
 
-                <img src="./img/mountains.png" alt="mountains" class="rounded-4xl">
+            <div class="pt-10 relative">
 
-                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg absolute top-15 right-7 group-hover:text-[#FF7F5C] transition-all duration-300 ease-in-out">
+                <!-- MAIN IMAGE!!! -->
+
+                <div class="w-full h-74">
+
+                    <img id="mainImage" src="./img/mountains.png" alt="mountains" class="rounded-4xl transition-all duration-500 ease-in-out">
+
+                </div>
+
+                <!-- MAIN IMAGE!!! -->
+                <!-- ========================== -->
+
+
+                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg absolute top-15 right-7 transition-all duration-500 ease-in-out cursor-pointer likeBtn">
 
                     <i class="fa-solid fa-heart"></i>
 
                 </div>
 
+                <!-- SWIPER IMG!!! -->
+
                 <div class="flex items-center gap-5 justify-center absolute bottom-8 left-7 bg-white/30 backdrop-blur-xs px-3 py-4 rounded-2xl">
 
-                    <img src="./img/sunset.png" alt="sunset">
-                    <img src="./img/sunset.png" alt="sunset">
-                    <img src="./img/sunset.png" alt="sunset">
-                    <img src="./img/sunset.png" alt="sunset">
+                    <img class="swiperImg cursor-pointer" src="./img/sunset.png" alt="sunset" data-main="./img/mountains.png">
+
+                    <img class="swiperImg cursor-pointer" src="./img/mountain.png" alt="sunset" data-main="./img/mainNature2.jpg">
+
+                    <img class="swiperImg cursor-pointer" src="./img/sunrise.png" alt="sunset" data-main="./img/mainNature3.jpg">
+
+                    <img class="swiperImg cursor-pointer" src="./img/fog.png" alt="sunset" data-main="./img/mainNature4.jpg">
 
                 </div>
 
+                <!-- SWIPER IMG!!! -->
+                <!-- ====================== -->
+
             </div>
+
+            <!-- TAB NATURE SECTION END!!! -->
+            <!-- ================================== -->
+
 
             <div class="mt-8">
 
@@ -591,7 +911,7 @@
 
             </div>
 
-            <div class="relative group flex items-center justify-between mt-9">
+            <div class="relative flex items-center justify-between mt-9">
 
                 <div class="flex items-center gap-5">
 
@@ -613,7 +933,7 @@
 
                 </div>
 
-                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg group-hover:text-[#FF7F5C] transition-all duration-300 ease-in-out">
+                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg transition-all duration-300 ease-in-out cursor-pointer likeBtn">
 
                     <i class="fa-solid fa-heart"></i>
 
@@ -621,7 +941,7 @@
 
             </div>
 
-            <div class="relative group flex items-center justify-between mt-9">
+            <div class="relative flex items-center justify-between mt-9">
 
                 <div class="flex items-center gap-5">
 
@@ -643,7 +963,7 @@
 
                 </div>
 
-                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg group-hover:text-[#FF7F5C] transition-all duration-300 ease-in-out">
+                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg transition-all duration-300 ease-in-out cursor-pointer likeBtn">
 
                     <i class="fa-solid fa-heart"></i>
 
@@ -651,7 +971,7 @@
 
             </div>
 
-            <div class="relative group flex items-center justify-between mt-9">
+            <div class="relative flex items-center justify-between mt-9">
 
                 <div class="flex items-center gap-5">
 
@@ -673,7 +993,7 @@
 
                 </div>
 
-                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg group-hover:text-[#FF7F5C] transition-all duration-300 ease-in-out">
+                <div class="bg-white/60 px-3 py-2 rounded-full backdrop-blur-md text-col text-lg transition-all duration-300 ease-in-out cursor-pointer likeBtn">
 
                     <i class="fa-solid fa-heart"></i>
 
@@ -689,5 +1009,8 @@
     </div>
 
 
+
+    <!-- MAIN JS!!! -->
+    <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

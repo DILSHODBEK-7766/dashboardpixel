@@ -3,6 +3,57 @@
 /* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
 
 
+:root{
+    --main-color: #18333E;
+}
+
+@layer utilities{
+    
+    .text-col{
+        color: var(--main-color);
+    }
+
+    .activePage{
+        @apply bg-[#18333E];
+    }
+
+    .activePage p, .activePage h3{
+        @apply text-white;
+    }
+
+    .activePage div{
+        @apply opacity-100;
+    }
+    
+
+    /* BTN ACTIVE!!! */
+    .activeBtn{
+        @apply bg-[rgb(24_51_61)] text-white transition-all duration-300 ease-in-out;
+    }
+    /* BTN ACTIVE!!! */
+    /* ============================= */
+
+
+    /* TAB'S ACTIVE */
+    .activeTab{
+
+        @apply opacity-100 pointer-events-auto;
+
+    }
+    /* TAB'S ACTIVE */
+
+    /* TAB'S PASSIVE!!! */
+    .passiveTab{
+
+        @apply opacity-0 pointer-events-none;
+
+    }
+    /* TAB'S PASSIVE!!! */
+    /* ======================== */
+    
+}
+
+
 @font-face {
     font-family: 'baloo2';
     src: url('../fonts/Baloo2-Bold.ttf');
@@ -47,16 +98,3 @@
     font-weight: 400;
 }
 
-
-
-:root{
-    --main-color: #18333E;
-}
-
-@layer utilities{
-    
-    .text-col{
-        color: var(--main-color);
-    }
-
-}
